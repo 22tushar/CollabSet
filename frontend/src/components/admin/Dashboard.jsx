@@ -18,7 +18,7 @@ const Dashboard = () => {
     <StyledDashboard>
       <SideNav>
 
-        {auth.isAdmin ? (<NavLink
+        {auth.isAdmin === 'admin' ? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
@@ -27,7 +27,7 @@ const Dashboard = () => {
           Add Client
         </NavLink>) : null}
 
-       {auth.isAdmin ? null :(<NavLink
+       {auth.isAdmin === 'TPO' ? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
@@ -35,9 +35,9 @@ const Dashboard = () => {
         >
 
           Companies Hiring
-        </NavLink>)}
+        </NavLink>) : null}
 
-       {auth.isAdmin ? null :(<NavLink
+       {auth.isAdmin === 'TPO' ? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
@@ -45,24 +45,24 @@ const Dashboard = () => {
         >
 
           Accepted Requests
-        </NavLink>) }
+        </NavLink>) : null }
 
-        {auth.isAdmin ? null : (<NavLink
+        {auth.isAdmin === 'TPO'? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/users"
         >
           All student data
-        </NavLink>)}
-        {auth.isAdmin ? null : (<NavLink
+        </NavLink>) : null}
+        {auth.isAdmin === 'TPO' ? (<NavLink
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
           to="/admin/algorithm"
         >
           Skills Recommmendatiom 
-        </NavLink>)}
+        </NavLink>) : null}
       </SideNav>
       <Content>
         <Outlet />

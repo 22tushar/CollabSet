@@ -1,0 +1,126 @@
+const { User } = require("../models/user");
+const { Skill } = require("../models/skill");
+const { auth, isUser, isAdmin } = require("../middleware/auth");
+const router = require("express").Router();
+
+//CREATE
+
+router.get("/allTPO", async (req, res) => {
+  try {
+    const allTPO = await User.find({ T: true });
+    res.status(200).send(allTPO)
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.get("/allCampany", async (req, res) => {
+
+  try {
+    const allCampany = await User.find({ C: true });
+    res.status(200).send(allCampany)
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+router.get("/Accepted", async (req, res) => {
+
+  try {
+    const allrequestAccepted = await User.find({
+      reqAccept
+        : true
+    });
+    res.status(200).send(allrequestAccepted)
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+});
+
+router.post("/ReqSent", async (req, res) => {
+
+  const { email } = req.body;
+  try {
+    await User.findOneAndUpdate({ email },
+      {
+        reqSent: true
+      },
+      { new: true });
+    res.status(200).send(" has been deleted...");
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/skills", async (req, res) => {
+
+  const { skill } = req.body;
+  console.log(skill.skill1)
+  var myData = new Skill({skill:skill.skill1});
+   myData.save()
+  //  console.log
+    .then(item => {
+      res.send("item saved to database");
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+})
+router.get("/getskills", async (req, res) => {
+
+  try {
+    const allskill = await Skill.find();
+    res.status(200).send(allskill)
+    console.log(allskill[0].skill)
+  } catch (error) {
+    res.status(500).send(error);
+  }
+})
+
+router.get("/HRequest", async (req, res) => {
+
+  try {
+    const Hreq = await User.find({ reqSent: true });
+    res.status(200).send(Hreq)
+    console.log(Hreq)
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/ReqAccept", async (req, res) => {
+  const { email } = req.body
+
+  try {
+    await User.findOneAndUpdate({ email: email },
+      {
+        reqAccept: true,
+        reqSent: false
+      },
+      { new: true });
+    res.status(200).send("Product has been deleted...");
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/reject", async (req, res) => {
+  const { email } = req.body
+
+  try {
+    await User.findOneAndUpdate({ email: email },
+      {
+        reqAccept: false,
+        reqSent: false
+      },
+      { new: true });
+    res.status(200).send("Product has been deleted...");
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//DELETE
+module.exports = router

@@ -36,7 +36,7 @@ const NavBar = () => {
       </Link> */}
       {auth._id ? (
         <Links>
-          {auth.isAdmin ? (
+          {auth.isAdmin== 'admin'? (
             <div>
               <Link to="/admin/summary">Admin</Link>
             </div>

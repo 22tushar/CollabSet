@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    role:{type:String},
     name:{type:String},
     desc:{type:String},
     email:{type:String},
@@ -11,7 +10,7 @@ const userSchema = new mongoose.Schema(
     reqAccept: { type: Boolean, default: false },
     C: { type: Boolean, default: false },
     T: { type: Boolean, default: false },
-    isAdmin: { type: Boolean, default: false },
+    isAdmin: { type: String},
   },
   { timestamps: true }
 );

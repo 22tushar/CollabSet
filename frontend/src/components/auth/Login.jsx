@@ -15,15 +15,16 @@ const Login = () => {
   });
 
   useEffect(() => {
-    if(auth.isAdmin == 'admin'){
+    if(auth.isAdmin === 'admin'){
        navigate("/admin/adminpage")
     }else
-    if (auth.isAdmin == 'company') {
+    if (auth.isAdmin === 'company') {
       navigate("/company/companydashboard");
-    }else{
+    }else if(auth.isAdmin === 'TPO'){
       navigate("/admin/tpodashboard");
     }
   }, [auth._id, navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

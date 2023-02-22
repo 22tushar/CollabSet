@@ -4,7 +4,7 @@ import ThreeBoxes from '../ThreeBoxes'
 export default function TPODashboard() {
   return (
     <div>
-      <h1>TPODashboard</h1>
+      <h1>TPO Dashboard</h1>
       <ThreeBoxes/>
     </div>
   )

@@ -1,4 +1,5 @@
-import React, { useState , useEffect , useSelector } from 'react';
+import React, { useState , useEffect } from 'react';
+import { useSelector } from "react-redux";
 import './requests.css'
 import { url } from '../../slices/api';
 import axios from 'axios';
@@ -8,7 +9,7 @@ import { toast } from 'react-toastify';
 const Companies = () => {
 
   const [company,Setcompany]=useState([])
-  // const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
   useEffect(()=>{
     const fetchPosts = async ()=>{
         await axios.get(`${url}/allrequest/allCampany`)
@@ -52,7 +53,7 @@ const Companies = () => {
                 <h4 className="email">{email}</h4>
               </header>
             </div>
-            <button className="sendrequest" onClick={() => sendRequest(email)}>Send Request</button>
+            <button className="sendrequest" onClick={() => sendRequest(auth.email)}>Send Request</button>
 
           </article>
         );
