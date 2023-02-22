@@ -13,7 +13,7 @@ const CreateProduct = () => {
   const { createStatus } = useSelector((state) => state.products);
 
   const [user, setUser] = useState({
-    isAdmin:"",
+    role:"",
     name: "",
     desc:"",
     email: "",
@@ -68,7 +68,7 @@ const CreateProduct = () => {
       <StyledForm onSubmit={handleSubmit}>
         <h3>Create a Client</h3>
       
-        <select onChange={(e) => setUser({ ...user, isAdmin: e.target.value })}>
+        <select onChange={(e) => setUser({ ...user, role: e.target.value })}>
           <option value="">Select Role</option>
           <option value="TPO">TPO</option>
           <option value="Company">Company</option>

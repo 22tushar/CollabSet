@@ -21,17 +21,16 @@ router.post("/", async (req, res) => {
 
   console.log("here");
 
-  const { isAdmin, name,desc, email, password ,reqSent,reqAccept,C,T} = req.body;
+  const { role, isAdmin, name,desc, email, password ,reqSent,reqAccept,C,T} = req.body;
   
-  console.log(isAdmin)
-  user = new User({ isAdmin , name,desc, email, password ,reqSent,reqAccept,C,T});
+  user = new User({role, isAdmin , name,desc, email, password ,reqSent,reqAccept,C,T});
   
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
-  
+  console.log(role)
   await user.save();
-  if(isAdmin == 'TPO') await User.findOneAndUpdate({email:req.body.email } , {T:true });
-  else   await User.findOneAndUpdate({email:req.body.email } ,{ C:true });
+  if(role == 'TPO') await User.findOneAndUpdate({email:req.body.email } , {T:true , isAdmin:'TPO'});
+  else   await User.findOneAndUpdate({email:req.body.email } ,{ C:true, isAdmin:'company' });
 
   const token = generateAuthToken(user);
 
