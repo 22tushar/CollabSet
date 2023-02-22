@@ -1,0 +1,14 @@
+.buttonclass{
+    justify-content: center;
+    display: flex;
+}
+
+.buttonclass button{
+    font-size: 25px;
+    background-color: blue;
+    color: white;
+    padding: 8px;
+    margin: 15px;
+    font-weight: 600;
+    border-radius: 15px;
+}
