@@ -77,12 +77,13 @@ toast.success("Rejected", { position: "top-right" });
       {HRequest.map((listitem) => {
         const { id,name, email } = listitem;
         return (
-          <NavLink to='/company/interview'>
           <article key={id} className='menu-item'>
             <img src='https://pinnacle.works/wp-content/uploads/2022/06/dummy-image.jpg' alt={name} className='photo' />
             <div className='item-info'>
               <header>
+            <NavLink to='/company/interview'>
                 <h4>{name}</h4>
+          </NavLink>
                 <h4 className="email">{email}</h4>
               </header>
             </div>
@@ -91,7 +92,6 @@ toast.success("Rejected", { position: "top-right" });
             <button className="sendrequest" onClick={() => reject(email)}>Reject Request</button>
 
           </article>
-          </NavLink>
         );
       })}
     </div>
