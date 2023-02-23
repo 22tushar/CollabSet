@@ -16,7 +16,7 @@ const Dashboardc = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/company/Orders"
+          to="/company/alltpo"
         >
           
           All TPO

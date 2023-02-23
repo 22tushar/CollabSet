@@ -15,13 +15,13 @@ import { useDispatch } from "react-redux";
 import { loadUser } from "./slices/authSlice";
 import CheckoutSuccess from "./components/CheckoutSuccess";
 import Dashboard from "./components/admin/Dashboard";
-import Products from "./components/admin/Products";
-import Users from "./components/admin/Users";
-import Orders from "./components/admin/Oders";
-import Orders1 from "./components/admin/Orders1"
-import Summary from "./components/admin/Summary";
-import CreateProduct from "./components/admin/CreateProduct";
-import AllTPO from "./components/company/Orders";
+import Addclients from "./components/admin/addclients";
+import AllStudentData from "./components/admin/allStudentData";
+import Hirings from "./components/admin/hirings";
+// import Orders1 from "./components/admin/Orders1"
+import AcceptedRequest from "./components/admin/acceptedRequest";
+import Createclients from "./components/admin/create-clients";
+import AllTPO from "./components/company/alltpo";
 import Algorithm from "./components/admin/Algorithm";
 import Dashboardc from "./components/company/Dashboard";
 import HRequest from "./components/company/hiringrequest";
@@ -51,7 +51,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/company" element={<Dashboardc />}>
             <Route path="companydashboard" element={<Companydashboard/>} />
-              <Route path="Orders" element={<AllTPO/>} />
+              <Route path="alltpo" element={<AllTPO/>} />
               <Route path="hiringrequest" element={<HRequest/>} />
               <Route path="interview" element={<Interview/>} />
             </Route>
@@ -59,13 +59,13 @@ function App() {
             <Route path="tpodashboard" element={<TPODashboard/>} />
             <Route path="algorithm" element={<Algorithm/>} />
               <Route path="adminpage" element={<Adminpage />} />
-              <Route path="summary" element={<Summary />} />
-              <Route path="products" element={<Products />}>
-                <Route path="create-product" element={<CreateProduct />} />
+              <Route path="acceptedRequest" element={<AcceptedRequest />} />
+              <Route path="addclients" element={<Addclients />}>
+                <Route path="create-clients" element={<Createclients />} />
               </Route>
-              <Route path="users" element={<Users />} />
-              <Route path="orders" element={<Orders />} />
-              <Route path="orders1" element={<AllTPO/>} />
+              <Route path="allStudentData" element={<AllStudentData />} />
+              <Route path="hirings" element={<Hirings />} />
+              {/* <Route path="orders1" element={<AllTPO/>} /> */}
               {/* <Route path="alltpo" element={<TPOlist/>} /> */}
             </Route>
             <Route path="*" element={<NotFound />} />

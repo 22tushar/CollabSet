@@ -8,7 +8,7 @@ import { registerUser } from "../../slices/authSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { url } from "../../slices/api";
-const CreateProduct = () => {
+const Createclients = () => {
   const dispatch = useDispatch();
   const { createStatus } = useSelector((state) => state.products);
 
@@ -128,7 +128,7 @@ const CreateProduct = () => {
   );
 };
 
-export default CreateProduct;
+export default Createclients;
 
 const StyledForm = styled.form`
   display: flex;

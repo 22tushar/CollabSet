@@ -22,7 +22,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/products"
+          to="/admin/addclients"
         >
           Add Client
         </NavLink>) : null}
@@ -31,7 +31,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/orders"
+          to="/admin/hirings"
         >
 
           Companies Hiring
@@ -41,7 +41,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/summary"
+          to="/admin/acceptedRequest"
         >
 
           Accepted Requests
@@ -51,7 +51,7 @@ const Dashboard = () => {
           className={({ isActive }) =>
             isActive ? "link-active" : "link-inactive"
           }
-          to="/admin/users"
+          to="/admin/allStudentData"
         >
           All student data
         </NavLink>) : null}
