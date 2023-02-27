@@ -4,7 +4,6 @@ import { ToastContainer } from "react-toastify";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
-import Cart from "./components/Cart";
 import Adminpage from "./components/admin/adminpage";
 import "react-toastify/dist/ReactToastify.css";
 import Register from "./components/auth/Register";
@@ -41,7 +40,6 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
