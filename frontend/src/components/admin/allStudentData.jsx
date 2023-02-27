@@ -1,8 +1,5 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-// import { RiPhoneFill, } from 'react-icons/ri'
-// import { FaAddressCard } from 'react-icons/fa'
-// import { AiOutlineMail } from 'react-icons/ai'
 import './nodemailer.css'
 import List from './List'
 

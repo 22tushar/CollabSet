@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { PrimaryButton } from "./CommonStyled";
-import { productsCreate } from "../../slices/productsSlice";
 import { registerUser } from "../../slices/authSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { url } from "../../slices/api";
 const Createclients = () => {
+
+
   const dispatch = useDispatch();
-  const { createStatus } = useSelector((state) => state.products);
 
   const [user, setUser] = useState({
     role:"",
@@ -112,7 +112,7 @@ const Createclients = () => {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
         <PrimaryButton type="submit">
-          {createStatus === "pending" ? "Submitting" : "Submit"}
+           Submit
         </PrimaryButton>
       </StyledForm>
       {/* <ImagePreview>

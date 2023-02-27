@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const { cartTotalQuantity } = useSelector((state) => state.cart);
   const auth = useSelector((state) => state.auth);
   
   const navigate=useNavigate();

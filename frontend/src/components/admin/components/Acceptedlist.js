@@ -3,23 +3,6 @@ import './requests.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { url } from '../../../slices/api';
-// const items =[
-//     {
-//         id: 1,
-//         tpo: 'Manit Bhopal',
-//         score: '89.0',
-//       },
-//       {
-//         id: 2,
-//         tpo: 'vnit nagpur',
-//         score: '78.5',
-//       },
-//       {
-//         id: 3,
-//         tpo: 'LPU',
-//         score: '75.0',
-//       },
-// ]
 
 const Acceptedlist = () => {
 

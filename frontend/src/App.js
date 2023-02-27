@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
@@ -13,12 +12,10 @@ import Login from "./components/auth/Login";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loadUser } from "./slices/authSlice";
-import CheckoutSuccess from "./components/CheckoutSuccess";
 import Dashboard from "./components/admin/Dashboard";
 import Addclients from "./components/admin/addclients";
 import AllStudentData from "./components/admin/allStudentData";
 import Hirings from "./components/admin/hirings";
-// import Orders1 from "./components/admin/Orders1"
 import AcceptedRequest from "./components/admin/acceptedRequest";
 import Createclients from "./components/admin/create-clients";
 import AllTPO from "./components/company/alltpo";
@@ -45,7 +42,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout-success" element={<CheckoutSuccess />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Login />} />
@@ -65,8 +61,6 @@ function App() {
               </Route>
               <Route path="allStudentData" element={<AllStudentData />} />
               <Route path="hirings" element={<Hirings />} />
-              {/* <Route path="orders1" element={<AllTPO/>} /> */}
-              {/* <Route path="alltpo" element={<TPOlist/>} /> */}
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
