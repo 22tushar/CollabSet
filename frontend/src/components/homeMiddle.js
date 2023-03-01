@@ -1,5 +1,5 @@
 import React from "react";
-const Hero = () => {
+const HomeMiddle = () => {
   return (
     <div style={styles.container}>
       <div style={styles.textContainer}>
@@ -41,4 +41,4 @@ const styles = {
   },
 };
 
-export default Hero;
+export default HomeMiddle;

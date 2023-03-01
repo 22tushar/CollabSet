@@ -89,7 +89,7 @@ const Createclients = () => {
         />
 
         {/* ........skill............... */}
-        Add first skill
+        Add Required Skill
         <input
           type="text"
           placeholder="Add first skill"
@@ -115,15 +115,6 @@ const Createclients = () => {
            Submit
         </PrimaryButton>
       </StyledForm>
-      {/* <ImagePreview>
-        {productImg ? (
-          <>
-            <img src={productImg} alt="error!" />
-          </>
-        ) : (
-          <p>Product image upload preview will appear here!</p>
-        )}
-      </ImagePreview> */}
     </StyledCreateProduct>
   );
 };
